@@ -21,7 +21,6 @@ def main():
     selected_cols = st.multiselect(
         "Escolha as colunas para pesquisa",
         options=column_names,
-        default=column_names  # Por padrão, seleciona todas as colunas
     )
 
     # Pesquisa por valor nas colunas selecionadas
@@ -57,6 +56,11 @@ def main():
 
         else:
             st.warning("Nenhuma coluna selecionada para pesquisa.")
+
+    else:
+        # Mostrar tabela completa quando não há valor de pesquisa
+        st.write("### Tabela Completa")
+        st.dataframe(data, height=800, width=1000)
 
     # Se necessário, você pode reativar a visualização gráfica com o código abaixo
     # # Selecionar colunas para visualização
