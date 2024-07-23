@@ -5,13 +5,17 @@ class EstoqueView:
         st.title("Pesquisa de Estoque")
 
     def display_column_names(self, column_names):
-        st.write("### Nomes das Colunas Disponíveis")
-        st.write(column_names)
+        allowed_columns = ['Marca', 'Descrição', 'Fabricante', 'NCM', 'Codigo da unidade', 'Informações Diversas']
+        filtered_columns = [col for col in column_names if col in allowed_columns]
+        st.write("### Colunas Disponíveis Para Pesquisa")
+        st.write(filtered_columns)
 
     def get_selected_columns(self, column_names):
+        allowed_columns = ['Marca', 'Descrição', 'Fabricante', 'NCM', 'Codigo da unidade', 'Informações Diversas']
+        filtered_columns = [col for col in column_names if col in allowed_columns]
         return st.multiselect(
             "Escolha as colunas para pesquisa",
-            options=column_names,
+            options=filtered_columns,
         )
 
     def get_search_value(self):
@@ -30,3 +34,6 @@ class EstoqueView:
 
     def display_error(self, message):
         st.error(message)
+
+    def clear_search(self):
+        st.empty()  # Limpa todos os elementos exibidos na tela

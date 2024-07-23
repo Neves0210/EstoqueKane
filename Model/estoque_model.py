@@ -1,3 +1,5 @@
+# model/estoque_model.py
+
 import pandas as pd
 import os
 
@@ -8,9 +10,11 @@ class EstoqueModel:
 
     def load_data(self):
         try:
-            return pd.read_csv(self.file_path)
+            # Ajuste o caminho para garantir que o arquivo seja encontrado
+            csv_path = os.path.join(os.path.dirname(__file__), '..', 'data', self.file_path)
+            return pd.read_csv(csv_path)
         except FileNotFoundError:
-            raise FileNotFoundError("Arquivo 'estoque_kanemoto.csv' não encontrado no diretório atual.")
+            raise FileNotFoundError(f"Arquivo '{self.file_path}' não encontrado no diretório 'data'.")
 
     def filter_data(self, selected_cols, search_value, always_visible_cols):
         # Filtrar os dados com base na pesquisa
