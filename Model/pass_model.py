@@ -3,9 +3,16 @@ import csv
 import os
 
 class UserModel:
-    def __init__(self, csv_file='users.csv'):
+    def __init__(self, csv_file='Data/users.csv'):  # Atualiza o caminho do arquivo
         self.csv_file = csv_file
+        self.ensure_directory_exists()  # Garante que o diretório existe
         self.ensure_file_exists()
+
+    def ensure_directory_exists(self):
+        # Cria o diretório se não existir
+        directory = os.path.dirname(self.csv_file)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
     def ensure_file_exists(self):
         if not os.path.exists(self.csv_file):
