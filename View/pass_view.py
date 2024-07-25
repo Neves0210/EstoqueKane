@@ -23,4 +23,10 @@ class UserView:
 
     def display_success(self, message):
         st.success(message)
-    
+
+    def display_pending_users(self, pending_users):
+        st.subheader("Aprovar Usuários Pendentes")
+        for username in pending_users:
+            if st.button(f"Aprovar {username}"):
+                return username
+        return None
