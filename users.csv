@@ -1,5 +1,2 @@
-username,password,status
-Neves,$2b$12$KJMpm3ObyT3aQkEC2e2.VOpQjZZ5x6e7pD9U7FO4DHVDicBj5nWPq,approved
-Danilo,$2b$12$qPzPCDhmxQwGJBNp2v6r8OYqEU3Jer0OIVcX3Bn9vEnWW8PP2d2pS,approved
-Jairo,$2b$12$9Yc7gxCWouEap2rEXbITBOSkzxA1DZCvD95ZqKaoecfWFvAJ.vYPa,approved
-Pai,$2b$12$Oal2hVZwEp4UnsTlBDumJ.o0CKDiIDl7P8NqrbpKeMlbV/cm/8XkS,pending
+username,password,status,type
+Neves,$2b$12$KJMpm3ObyT3aQkEC2e2.VOpQjZZ5x6e7pD9U7FO4DHVDicBj5nWPq,approved,admin
